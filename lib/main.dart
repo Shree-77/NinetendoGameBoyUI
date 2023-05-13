@@ -23,6 +23,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void moveUp() {}
+  void moveDown() {}
+  void moveLeft() {}
+  void moveRight() {}
+  void pressedA() {}
+  void pressedB() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,15 +42,33 @@ class _HomePageState extends State<HomePage> {
               )),
           Expanded(
               child: Container(
-            color: Colors.grey[800],
+            color: Colors.grey[900],
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'G A M E B O Y',
-                      style: TextStyle(color: Colors.white),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(100, 0, 20, 10),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Ninetendo',
+                            style: TextStyle(
+                                color: Colors.amber,
+                                fontSize: 12,
+                                fontStyle: FontStyle.italic,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            ' G A M E B O Y',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 MyButton(
                                   text: '←',
-                                  function: () {},
+                                  function: moveLeft,
                                 ),
                                 Container(
                                   height: 50,
@@ -70,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 MyButton(
                                   text: '↑',
-                                  function: () {},
+                                  function: moveUp,
                                 ),
                                 Container(
                                   height: 50,
@@ -78,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 MyButton(
                                   text: '↓',
-                                  function: () {},
+                                  function: moveDown,
                                 ),
                               ],
                             ),
@@ -90,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 MyButton(
                                   text: '→',
-                                  function: () {},
+                                  function: moveRight,
                                 ),
                                 Container(
                                   height: 50,
@@ -113,8 +138,8 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                                 MyButton(
-                                  text: 'a',
-                                  function: () {},
+                                  text: 'b',
+                                  function: pressedB,
                                 ),
                               ],
                             ),
@@ -126,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                                       children: [
                                         MyButton(
                                           text: 'a',
-                                          function: () {},
+                                          function: pressedA,
                                         ),
                                       ],
                                     ),
